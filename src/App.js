@@ -21,14 +21,8 @@ const Example = () => {
             </a>
           </Button>
           &nbsp;&nbsp;&nbsp;
-          <Button outline color="primary">
-            <a
-              style={{ textDecoration: "none" }}
-              href="/Resume.pdf"
-              download
-            >
+          <Button outline color="primary" onClick={()=>{window.open('./Resume.pdf')}}>
               Resume
-            </a>
           </Button>
         </p>
       </Jumbotron>
