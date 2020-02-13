@@ -24,7 +24,7 @@ const Example = () => {
           <Button outline color="primary">
             <a
               style={{ textDecoration: "none" }}
-              href="/Resume.pdf"
+              href="portfolio/Resume.pdf"
               download
             >
               Resume
