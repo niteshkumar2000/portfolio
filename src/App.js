@@ -26,7 +26,8 @@ const Example = () => {
             <a
               style={{ textDecoration: "none" }}
               href="./assets/Resume.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Resume
             </a>
