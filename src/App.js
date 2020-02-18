@@ -16,6 +16,7 @@ const Example = () => {
               style={{ textDecoration: "none" }}
               href="https://www.github.com/niteshkumar2000"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Click here
             </a>
@@ -24,7 +25,7 @@ const Example = () => {
           <Button outline color="primary">
             <a
               style={{ textDecoration: "none" }}
-              href="portfolio/Resume.pdf"
+              href="./assets/Resume.pdf"
               download
             >
               Resume
