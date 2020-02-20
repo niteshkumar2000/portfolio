@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
-import { Jumbotron, Button } from "reactstrap";
+import { Button } from "reactstrap";
 
 const Example = () => {
   return (
     <div>
-      <Jumbotron>
         <h1 className="display-3">Hello, there!</h1>
         <p className="lead">This is my personal website (under construction).</p>
         <hr className="my-2" />
@@ -33,7 +32,6 @@ const Example = () => {
             </a>
           </Button>
         </p>
-      </Jumbotron>
     </div>
   );
 };
