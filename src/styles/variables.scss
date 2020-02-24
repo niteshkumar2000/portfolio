@@ -1,7 +1,41 @@
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 $body-bg: black;
 $body-color: white;
+$primary: #ffb800;
 
 $theme-colors: (
-  "primary": #ffb800
+  "primary": $primary
 );
+
+$spacer: 3rem;
+$spacers:();
+
+$spacers: map-merge(
+          (
+            0: 0, 
+            1: ($spacer * .25),
+            2: ($spacer * .5),
+            3: ($spacer * .75),
+            4: ($spacer * 1),
+            5: ($spacer * 1.25)
+          ),
+          $spacers);
+
+$hr-border-color: rgba(white, .5) ;
+$hr-border-width: 1px;
+
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: darken($primary, 15%);
+$link-hover-decoration: underline;
+
+$list-group-color: $body-color;
+$list-group-bg: $body-bg;
+
 @import "~bootstrap/scss/bootstrap";
