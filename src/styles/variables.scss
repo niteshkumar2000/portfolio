@@ -23,7 +23,7 @@ $spacers: map-merge(
             2: ($spacer * .5),
             3: ($spacer * .75),
             4: ($spacer * 1),
-            5: ($spacer * 1.25)
+            5: ($spacer * 2)
           ),
           $spacers);
 
@@ -32,10 +32,38 @@ $hr-border-width: 1px;
 
 $link-color: $primary;
 $link-decoration: none;
-$link-hover-color: darken($primary, 15%);
+$link-hover-color: white;
 $link-hover-decoration: underline;
 
 $list-group-color: $body-color;
 $list-group-bg: $body-bg;
+
+
+$modal-inner-padding:               1rem ;
+
+$modal-dialog-margin:               .5rem ;
+$modal-dialog-margin-y-sm-up:       1.75rem ;
+
+
+$modal-content-color:               $body-color ;
+$modal-content-bg:                  $body-bg ;
+$modal-content-border-color:        rgba($body-color, .2) ;
+$modal-content-box-shadow-xs:       0 .25rem .5rem rgba(black, .5) ;
+$modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba(black, .5) ;
+
+$modal-backdrop-bg:                 lighten($body-bg,15%) ;
+$modal-backdrop-opacity:            .5 ;
+$modal-header-border-color:         $primary ;
+$modal-header-padding-y:            1rem ;
+$modal-header-padding-x:            1rem ; // Keep this for backwards compatibility
+
+$modal-xl:                          1140px ;
+$modal-lg:                          800px ;
+$modal-md:                          500px ;
+$modal-sm:                          300px ;
+
+$modal-fade-transform:              translate(0, -50px) ;
+$modal-show-transform:              none ;
+$modal-transition:                  transform .3s ease-out ;
 
 @import "~bootstrap/scss/bootstrap";
