@@ -66,4 +66,6 @@ $modal-fade-transform:              translate(0, -50px) ;
 $modal-show-transform:              none ;
 $modal-transition:                  transform .3s ease-out ;
 
+$overflows: auto, hidden ;
+
 @import "~bootstrap/scss/bootstrap";

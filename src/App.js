@@ -18,6 +18,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpen, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { isMobile } from "react-device-detect";
 
 const Home = () => {
   return (
@@ -447,70 +448,120 @@ const WorkExperience = () => {
   );
 }
 function App() {
-  return (
-    <Container>
-      <Row
-        className="d-flex justify-content-end p-2"
-        style={{
-          top: 0,
-          zIndex: 100,
-          position: "fixed",
-          backgroundColor: "black",
-          width: "90%"
-        }}
-      >
-        <NavBar />
-      </Row>
-      <Row className="d-flex justify-content-center pt-5 pb-5" id="home">
-        <Home />
-      </Row>
-      <Row className="d-flex justify-content-center pt-5" id="about">
-        <h1>About Me</h1>
-      </Row>
-      <Row className="d-flex justify-content-start">
-        <About />
-      </Row>
-      <Row className="d-flex justify-content-center pt-5" id="projects">
-        <h1>Projects</h1>
-      </Row>
-      <Row className="d-flex justify-content-start" id="projects">
-        <h3>Academic Projects</h3>
-      </Row>
-      <Row className="d-flex justify-content-start">
-        <AcademicProjects />
-      </Row>
-      <Row className="d-flex justify-content-start" id="projects">
-        <h3>Non-Academic Projects</h3>
-      </Row>
-      <Row className="d-flex justify-content-start">
-        <NonAcademicProjects />
-      </Row>
-      <Row className="d-flex justify-content-start" id="projects">
-        <h3>Open Source Contribution</h3>
-      </Row>
-      <Row className="d-flex justify-content-start">
-        <Contribution />
-      </Row>
-      <Row className="d-flex justify-content-start">
-        <WorkExperience />
-      </Row>
-      <Row className="d-flex justify-content-center pt-5" id="contact">
-        <h1>Contact Me</h1>
-      </Row>
-      <Row className="d-flex justify-content-center">
-        <Contact />
-      </Row>
-      <Row className="d-flex justify-content-end pt-5">
-        <p>
-          &copy; 2020{" "}
-          <span className="text-primary">
-            <b>NITESHKUMAR</b>
-          </span>{" "}
-          All Rights Reserved
-        </p>
-      </Row>
-    </Container>
-  );
+  if(isMobile){
+      return (
+        <Container>
+          <Row className="d-flex justify-content-center mt-5 p-4" id="home">
+            <h3>
+              Hello! Please switch to{" "}
+              <span className="text-primary">desktop site</span> for better
+              experience!
+            </h3>
+            <h3>Take a quick look at my work!</h3>
+            <p>
+              <ListGroup>
+                <ListGroupItem>
+                  <NavLink
+                    href="./assets/Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button outline color="primary">
+                      Resume
+                    </Button>
+                  </NavLink>
+                  <NavLink
+                    href="https://github.com/niteshkumar2000"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button outline color="primary">
+                      Github
+                    </Button>
+                  </NavLink>
+                </ListGroupItem>
+                <ListGroupItem></ListGroupItem>
+              </ListGroup>
+            </p>
+            <p>Mobile view will be rolled out soon :)</p>
+          </Row>
+          <Row className="d-flex justify-content-end pt-5">
+            <p>
+              &copy; 2020{" "}
+              <span className="text-primary">
+                <b>NITESHKUMAR</b>
+              </span>{" "}
+              All Rights Reserved
+            </p>
+          </Row>
+        </Container>
+      );
+  } else{
+    return (
+      <Container>
+        <Row
+          className="d-flex justify-content-end p-2"
+          style={{
+            top: 0,
+            zIndex: 100,
+            position: "fixed",
+            backgroundColor: "black",
+            width: "90%"
+          }}
+        >
+          <NavBar />
+        </Row>
+        <Row className="d-flex justify-content-center pt-5 pb-5 mt-5" id="home">
+          <Home />
+        </Row>
+        <Row className="d-flex justify-content-center pt-5 mt-5" id="about">
+          <h1>About Me</h1>
+        </Row>
+        <Row className="d-flex justify-content-start">
+          <About />
+        </Row>
+        <Row className="d-flex justify-content-center pt-5" id="projects">
+          <h1>Projects</h1>
+        </Row>
+        <Row className="d-flex justify-content-start" id="projects">
+          <h3>Academic Projects</h3>
+        </Row>
+        <Row className="d-flex justify-content-start">
+          <AcademicProjects />
+        </Row>
+        <Row className="d-flex justify-content-start" id="projects">
+          <h3>Non-Academic Projects</h3>
+        </Row>
+        <Row className="d-flex justify-content-start">
+          <NonAcademicProjects />
+        </Row>
+        <Row className="d-flex justify-content-start" id="projects">
+          <h3>Open Source Contribution</h3>
+        </Row>
+        <Row className="d-flex justify-content-start">
+          <Contribution />
+        </Row>
+        <Row className="d-flex justify-content-start">
+          <WorkExperience />
+        </Row>
+        <Row className="d-flex justify-content-center pt-5" id="contact">
+          <h1>Contact Me</h1>
+        </Row>
+        <Row className="d-flex justify-content-center">
+          <Contact />
+        </Row>
+        <Row className="d-flex justify-content-end pt-5">
+          <p>
+            &copy; 2020{" "}
+            <span className="text-primary">
+              <b>NITESHKUMAR</b>
+            </span>{" "}
+            All Rights Reserved
+          </p>
+        </Row>
+      </Container>
+    );
+  }
 }
 
 export default App;
