@@ -489,7 +489,7 @@ function App() {
             <p>
               &copy; 2020{" "}
               <span className="text-primary">
-                <b>NITESHKUMAR</b>
+                <b>Niteshkumar</b>
               </span>{" "}
               All Rights Reserved
             </p>
@@ -554,7 +554,7 @@ function App() {
           <p>
             &copy; 2020{" "}
             <span className="text-primary">
-              <b>NITESHKUMAR</b>
+              <b>Niteshkumar</b>
             </span>{" "}
             All Rights Reserved
           </p>
