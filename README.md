@@ -1,8 +1,5 @@
-## Portfolio
+## [Portfolio](https://niteshkumar2000.github.io/portfolio) [![Build Status](https://travis-ci.com/niteshkumar2000/portfolio.svg?branch=master)](https://travis-ci.com/niteshkumar2000/portfolio)
 
-### To see the work
-
-Check out [here](https://niteshkumar2000.github.io/portfolio/)
 
 ## Available Scripts
 
