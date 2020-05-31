@@ -19,6 +19,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpen, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { isMobile } from "react-device-detect";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 const Home = () => {
   return (
@@ -46,6 +51,9 @@ const NavBar = () => {
         </NavItem>
         <NavItem>
           <NavLink href="#projects">Projects</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#work">Work</NavLink>
         </NavItem>
         <NavItem>
           <NavLink href="#contact">Contact</NavLink>
@@ -370,6 +378,41 @@ const ProjectAppCenter = () => {
   );
 };
 
+
+const GitUserBot = () => {
+  const [modal, setModal] = useState(false);
+
+  const toggle = () => setModal(!modal);
+
+  return (
+    <div>
+      <Button outline color="primary" onClick={toggle}>
+        GithubUserBot
+      </Button>
+      <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>AppCenter</ModalHeader>
+        <ModalBody>
+          A telegram bot which gives Github user information which can be deployed on server :)
+        </ModalBody>
+        <ModalFooter>
+          <NavLink
+            href="https://github.com/niteshkumar2000/GithubUser"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button color="primary" onClick={toggle}>
+              View
+            </Button>
+          </NavLink>{" "}
+          <Button color="danger" onClick={toggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
+      </Modal>
+    </div>
+  );
+}
+
 const AcademicProjects = () => {
   return (
     <React.Fragment>
@@ -398,6 +441,9 @@ const NonAcademicProjects = () => {
         <NavItem className="p-2">
           <ProjectScrapeIt />
         </NavItem>
+        <NavItem className="p-2">
+          <GitUserBot />
+        </NavItem>
       </Nav>
     </React.Fragment>
   );
@@ -409,12 +455,12 @@ const Contribution = () => {
       <Nav pills className="d-flex">
         <NavItem className="p-2">
           <NavLink
-            href="https://stats.crDroid.net/twolip"
+            href="https://github.com/FreakyOS"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button outline color="primary">
-              crDroid
+              Freaky OS
             </Button>
           </NavLink>
         </NavItem>
@@ -429,17 +475,6 @@ const Contribution = () => {
             </Button>
           </NavLink>
         </NavItem>
-        <NavItem className="p-2">
-          <NavLink
-            href="https://github.com/ancient-devices"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button outline color="primary">
-              Ancient Family
-            </Button>
-          </NavLink>
-        </NavItem>
       </Nav>
     </React.Fragment>
   );
@@ -448,16 +483,55 @@ const Contribution = () => {
 const WorkExperience = () => {
   return (
     <React.Fragment>
-      <h3>Work Experience</h3>
-      <p style={{fontSize:"20px"}}>
-        <b><span className="text-primary">Summer Intern</span> at MyGame Solution:</b><br />
-        During my period of internship, I was introduced to Outsystem low
-        code platform and developed an Android application, which helps in task
-        management.
-      </p>
+      <VerticalTimeline>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="2020 May - Present"
+          contentStyle={{ background: "black", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "7px solid  #fff" }}
+          iconStyle={{ background: "#ffb800" }}
+        >
+          <h3 className="vertical-timeline-element-title">Student Intern</h3>
+          <h4 className="vertical-timeline-element-subtitle">KLA, Chennai</h4>
+          <p style={{color:"#ffb800"}}>
+            Advanced Diagonostics & performance models using Machine Learning techniques.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "black", color: "#ffb800" }}
+          contentArrowStyle={{ borderRight: "7px solid  #ffb800" }}
+          date="2018 April - May"
+          iconStyle={{ background: "black" }}
+        >
+          <h3 className="vertical-timeline-element-title">Summer Intern</h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            My Game Solutions, Coimbatore
+          </h4>
+          <p style={{color: "#fff"}}>
+            I was introduced to Outsystem low
+            code platform and developed an Android application, which helps in
+            task management.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="2017 June - Present"
+          contentStyle={{ background: "black", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "7px solid  #fff" }}
+          iconStyle={{ background: "#ffb800" }}
+        >
+          <h3 className="vertical-timeline-element-title">College</h3>
+          <h4 className="vertical-timeline-element-subtitle">PSG Tech, Coimbatore</h4>
+          <p style={{color:"#ffb800"}}>
+            MSc.Sofware Systems (5 year intergrated course)
+          </p>
+        </VerticalTimelineElement>
+      </VerticalTimeline>
     </React.Fragment>
   );
 }
+
 function App() {
   if(isMobile){
       return (
@@ -552,7 +626,7 @@ function App() {
         <Row className="d-flex justify-content-start">
           <Contribution />
         </Row>
-        <Row className="d-flex justify-content-start">
+        <Row className="d-flex justify-content-start pt-5" id="work">
           <WorkExperience />
         </Row>
         <Row className="d-flex justify-content-center pt-5" id="contact">
