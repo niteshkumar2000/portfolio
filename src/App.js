@@ -390,7 +390,7 @@ const GitUserBot = () => {
         GithubUserBot
       </Button>
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>AppCenter</ModalHeader>
+        <ModalHeader toggle={toggle}>GithubUserBot</ModalHeader>
         <ModalBody>
           A telegram bot which gives Github user information which can be deployed on server :)
         </ModalBody>
