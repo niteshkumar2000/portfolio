@@ -13,12 +13,14 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter
+  ModalFooter,
+  Collapse,
+  Navbar,
+  NavbarToggler
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpen, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { isMobile } from "react-device-detect";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -28,37 +30,45 @@ import "react-vertical-timeline-component/style.min.css";
 const Home = () => {
   return (
     <React.Fragment>
-          <p style={{fontSize:"50px"}}>
+          <h1>
             Hi, I am <span className="text-primary">Niteshkumar</span>
-          </p>
+          </h1>
 
-          <p style={{ fontSize: "33px" }}>
+          <h3>
             I am a software developer. Let's build something amazing together
-          </p>
+          </h3>
     </React.Fragment>
   );
 };
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
   return (
     <React.Fragment>
-      <Nav>
-        <NavItem>
-          <NavLink href="#home">Home</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#about">About</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#projects">Projects</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#work">Work</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#contact">Contact</NavLink>
-        </NavItem>
-      </Nav>
+      <Navbar fixed="top" dark color="dark" expand="md">
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem onClick={toggle}>
+              <NavLink href="#home">Home</NavLink>
+            </NavItem>
+            <NavItem onClick={toggle}>
+              <NavLink href="#about">About</NavLink>
+            </NavItem>
+            <NavItem onClick={toggle}>
+              <NavLink href="#projects">Projects</NavLink>
+            </NavItem>
+            <NavItem onClick={toggle}>
+              <NavLink href="#work">Work</NavLink>
+            </NavItem>
+            <NavItem onClick={toggle}>
+              <NavLink href="#contact">Contact</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
     </React.Fragment>
   );
 }
@@ -66,31 +76,31 @@ const NavBar = () => {
 const About = () => {
   return (
     <React.Fragment>
-      <Media className="d-flex align-items-center">
+      <Media>
         <Media left>
           <img
             src="./assets/me.jpg"
             alt="profile"
-            width="300px"
-            height="300px"
+            width="250vw"
+            height="auto"
           />
         </Media>
-        <Media body className="p-2">
-          <ListGroup style={{ fontSize: "25px" }}>
+        <Media body>
+          <ListGroup>
             <ListGroupItem>
-              Name: <span className="text-primary p-2">Niteshkumar S</span>
+              Name: <span className="text-primary">Niteshkumar S</span>
             </ListGroupItem>
             <ListGroupItem>
-              Age: <span className="text-primary p-3">20</span>
+              Age: <span className="text-primary">20</span>
             </ListGroupItem>
             <ListGroupItem>
               Course:{" "}
-              <span className="text-primary p-1">
+              <span className="text-primary">
                 &nbsp;MSc Software Systems
               </span>
             </ListGroupItem>
             <ListGroupItem>
-              Country: <span className="text-primary p-1">India</span>
+              Country: <span className="text-primary">India</span>
             </ListGroupItem>
             <ListGroupItem>
               <NavLink
@@ -99,7 +109,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="float-left p-0"
               >
-                <Button outline color="primary" style={{width:"100%", height:"50px"}}>
+                <Button outline color="primary">
                   Resume
                 </Button>
               </NavLink>
@@ -175,7 +185,7 @@ const Contact = () => {
             <p style={{ color: "white", paddingTop: "10px" }}>Linkedin</p>
           </NavLink>
         </NavItem>
-        <NavItem className="d-flex p-4">
+        {/* <NavItem className="d-flex p-4">
           <NavLink
             href="https://wa.me/918825812533"
             target="_blank"
@@ -189,7 +199,7 @@ const Contact = () => {
             />
             <p style={{ color: "white", paddingTop: "10px" }}>Whatsapp</p>
           </NavLink>
-        </NavItem>
+        </NavItem> */}
       </Nav>
     </React.Fragment>
   );
@@ -416,17 +426,17 @@ const GitUserBot = () => {
 const AcademicProjects = () => {
   return (
     <React.Fragment>
-      <Nav pills className="d-flex">
-        <NavItem className="p-2">
+      <ListGroup horizontal>
+        <ListGroupItem>
           <ProjectPyOTP />
-        </NavItem>
-        <NavItem className="p-2">
+        </ListGroupItem>
+        <ListGroupItem>
           <ProjectAppCenter />
-        </NavItem>
-        <NavItem className="p-2">
+        </ListGroupItem>
+        <ListGroupItem>
           <ProjectMup />
-        </NavItem>
-      </Nav>
+        </ListGroupItem>
+      </ListGroup>
     </React.Fragment>
   );
 };
@@ -434,17 +444,17 @@ const AcademicProjects = () => {
 const NonAcademicProjects = () => {
   return (
     <React.Fragment>
-      <Nav pills className="d-flex">
-        <NavItem className="p-2">
+      <ListGroup horizontal>
+        <ListGroupItem>
           <ProjectHackIn />
-        </NavItem>
-        <NavItem className="p-2">
+        </ListGroupItem>
+        <ListGroupItem>
           <ProjectScrapeIt />
-        </NavItem>
-        <NavItem className="p-2">
+        </ListGroupItem>
+        <ListGroupItem>
           <GitUserBot />
-        </NavItem>
-      </Nav>
+        </ListGroupItem>
+      </ListGroup>
     </React.Fragment>
   );
 }
@@ -452,30 +462,22 @@ const NonAcademicProjects = () => {
 const Contribution = () => {
   return (
     <React.Fragment>
-      <Nav pills className="d-flex">
-        <NavItem className="p-2">
-          <NavLink
-            href="https://github.com/FreakyOS"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      <ListGroup horizontal>
+        <ListGroupItem tag='a' href="https://github.com/FreakyOS"
+          target="_blank"
+          rel="noopener noreferrer">
             <Button outline color="primary">
               Freaky OS
             </Button>
-          </NavLink>
-        </NavItem>
-        <NavItem className="p-2">
-          <NavLink
-            href="https://github.com/PixelExperience-FanEdition"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        </ListGroupItem>
+        <ListGroupItem tag='a' href="https://github.com/PixelExtended"
+          target="_blank"
+          rel="noopener noreferrer">
             <Button outline color="primary">
-              Pixel Experience
+              Pixel Extended
             </Button>
-          </NavLink>
-        </NavItem>
-      </Nav>
+        </ListGroupItem>
+      </ListGroup>
     </React.Fragment>
   );
 };
@@ -494,7 +496,8 @@ const WorkExperience = () => {
           <h3 className="vertical-timeline-element-title">Student Intern</h3>
           <h4 className="vertical-timeline-element-subtitle">KLA, Chennai</h4>
           <p style={{color:"#ffb800"}}>
-            Advanced Diagonostics & performance models using Machine Learning techniques.
+            (i) Advanced Diagonostics & performance models using Machine Learning Algorithms. <br></br>
+            (ii) Building Microservices and deploying on Kubernetes.
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -533,66 +536,10 @@ const WorkExperience = () => {
 }
 
 function App() {
-  if(isMobile){
-      return (
-        <Container>
-          <Row className="d-flex justify-content-center mt-5 p-4" id="home">
-            <h3>
-              Hello! Please switch to{" "}
-              <span className="text-primary">desktop site</span> for better
-              experience!
-            </h3>
-            <h3>Take a quick look at my work!</h3>
-            <p>
-              <ListGroup>
-                <ListGroupItem>
-                  <NavLink
-                    href="./assets/Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button outline color="primary">
-                      Resume
-                    </Button>
-                  </NavLink>
-                  <NavLink
-                    href="https://github.com/niteshkumar2000"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button outline color="primary">
-                      Github
-                    </Button>
-                  </NavLink>
-                </ListGroupItem>
-                <ListGroupItem></ListGroupItem>
-              </ListGroup>
-            </p>
-            <p>Mobile view will be rolled out soon :)</p>
-          </Row>
-          <Row className="d-flex justify-content-end pt-5">
-            <p>
-              &copy; 2020{" "}
-              <span className="text-primary">
-                <b>Niteshkumar</b>
-              </span>{" "}
-              All Rights Reserved
-            </p>
-          </Row>
-        </Container>
-      );
-  } else{
     return (
       <Container>
         <Row
-          className="d-flex justify-content-end p-2"
-          style={{
-            top: 0,
-            zIndex: 100,
-            position: "fixed",
-            backgroundColor: "black",
-            width: "90%"
-          }}
+          className="d-flex justify-content-start"
         >
           <NavBar />
         </Row>
@@ -602,7 +549,7 @@ function App() {
         <Row className="d-flex justify-content-center pt-5 mt-5" id="about">
           <h1>About Me</h1>
         </Row>
-        <Row className="d-flex justify-content-start">
+        <Row className="d-flex justify-content-center">
           <About />
         </Row>
         <Row className="d-flex justify-content-center pt-5" id="projects">
@@ -626,7 +573,10 @@ function App() {
         <Row className="d-flex justify-content-start">
           <Contribution />
         </Row>
-        <Row className="d-flex justify-content-start pt-5" id="work">
+        <Row className="d-flex justify-content-center pt-5" id="work">
+          <h1>Timeline</h1>
+        </Row>
+        <Row className="d-flex justify-content-start pt-5">
           <WorkExperience />
         </Row>
         <Row className="d-flex justify-content-center pt-5" id="contact">
@@ -646,7 +596,6 @@ function App() {
         </Row>
       </Container>
     );
-  }
 }
 
 export default App;
