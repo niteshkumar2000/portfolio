@@ -6,7 +6,6 @@ import {
   NavLink,
   Row,
   Container,
-  Media,
   ListGroup,
   ListGroupItem,
   Button,
@@ -16,7 +15,7 @@ import {
   ModalFooter,
   Collapse,
   Navbar,
-  NavbarToggler
+  NavbarToggler, Col
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpen, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
@@ -34,9 +33,9 @@ const Home = () => {
             Hi, I am <span className="text-primary">Niteshkumar</span>
           </h1>
 
-          <h3>
+          <p style={{fontSize: "3vw"}}>
             I am a software developer. Let's build something amazing together
-          </h3>
+          </p>
     </React.Fragment>
   );
 };
@@ -76,16 +75,16 @@ const NavBar = () => {
 const About = () => {
   return (
     <React.Fragment>
-      <Media>
-        <Media left>
-          <img
-            src="./assets/me.jpg"
-            alt="profile"
-            width="250vw"
-            height="auto"
-          />
-        </Media>
-        <Media body>
+        <Row>
+          <Col>
+            <img
+              src="./assets/me.jpg"
+              alt="profile"
+              width="200px"
+              height="200px"
+            />
+          </Col>
+          <Col>
           <ListGroup>
             <ListGroupItem>
               Name: <span className="text-primary">Niteshkumar S</span>
@@ -115,8 +114,8 @@ const About = () => {
               </NavLink>
             </ListGroupItem>
           </ListGroup>
-        </Media>
-      </Media>
+          </Col>
+        </Row>
     </React.Fragment>
   );
 }
@@ -587,7 +586,7 @@ function App() {
         </Row>
         <Row className="d-flex justify-content-end pt-5">
           <p>
-            &copy; 2020{" "}
+            &copy; {new Date().getFullYear().toString() + " "}
             <span className="text-primary">
               <b>Niteshkumar</b>
             </span>{" "}
