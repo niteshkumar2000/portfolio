@@ -69,4 +69,9 @@ $modal-transition:                  transform .3s ease-out ;
 
 $overflows: auto, hidden ;
 
+$card-bg: $body-bg;
+$card-color: $primary;
+$card-spacer-y: 0.75rem;
+$card-spacer-x: 1.25rem;
+
 @import "~bootstrap/scss/bootstrap";

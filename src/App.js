@@ -15,7 +15,8 @@ import {
   ModalFooter,
   Collapse,
   Navbar,
-  NavbarToggler, Col
+  NavbarToggler, Card, CardImg, CardText, CardBody,
+  CardTitle, CardFooter
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpen, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
@@ -75,20 +76,13 @@ const NavBar = () => {
 const About = () => {
   return (
     <React.Fragment>
-        <Row>
-          <Col>
-            <img
-              src="./assets/me.jpg"
-              alt="profile"
-              width="200px"
-              height="200px"
-            />
-          </Col>
-          <Col>
-          <ListGroup>
-            <ListGroupItem>
-              Name: <span className="text-primary">Niteshkumar S</span>
-            </ListGroupItem>
+      <Card>
+        <CardImg top src="./assets/me.jpg" style={{
+          borderRadius: "50%", width: "250px",
+          maxHeight: "250px"}} alt="Profile" />
+        <CardBody>
+          <CardTitle className="d-flex justify-content-center"><h1>Niteshkumar Sukumaran</h1></CardTitle>
+          <CardText style={{fontSize:"20px"}}>
             <ListGroupItem>
               Age: <span className="text-primary">20</span>
             </ListGroupItem>
@@ -101,21 +95,20 @@ const About = () => {
             <ListGroupItem>
               Country: <span className="text-primary">India</span>
             </ListGroupItem>
-            <ListGroupItem>
-              <NavLink
-                href="./assets/Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="float-left p-0"
-              >
-                <Button outline color="primary">
-                  Resume
+          </CardText>
+          <CardFooter className="d-flex justify-content-center">
+            <NavLink
+              href="./assets/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button outline color="primary">
+                Resume
                 </Button>
-              </NavLink>
-            </ListGroupItem>
-          </ListGroup>
-          </Col>
-        </Row>
+            </NavLink>
+          </CardFooter>
+        </CardBody>
+      </Card>
     </React.Fragment>
   );
 }
@@ -396,10 +389,10 @@ const GitUserBot = () => {
   return (
     <div>
       <Button outline color="primary" onClick={toggle}>
-        GithubUserBot
+        Github UserBot
       </Button>
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>GithubUserBot</ModalHeader>
+        <ModalHeader toggle={toggle}>Github UserBot</ModalHeader>
         <ModalBody>
           A telegram bot which gives Github user information which can be deployed on server :)
         </ModalBody>
