@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './tailwind.output.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './styles/variables.scss';
 

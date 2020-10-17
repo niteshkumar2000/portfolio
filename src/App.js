@@ -15,31 +15,17 @@ import {
   ModalFooter,
   Collapse,
   Navbar,
-  NavbarToggler, Card, CardImg, CardText, CardBody,
-  CardTitle, CardFooter
+  NavbarToggler
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelopeOpen, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-
-const Home = () => {
-  return (
-    <React.Fragment>
-          <h1>
-            Hi, I am <span className="text-primary">Niteshkumar</span>
-          </h1>
-
-          <p style={{fontSize: "3vw"}}>
-            I am a software developer. Let's build something amazing together
-          </p>
-    </React.Fragment>
-  );
-};
+import pfp from "./assets/me.jpg";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,144 +41,14 @@ const NavBar = () => {
               <NavLink href="#home">Home</NavLink>
             </NavItem>
             <NavItem onClick={toggle}>
-              <NavLink href="#about">About</NavLink>
-            </NavItem>
-            <NavItem onClick={toggle}>
               <NavLink href="#projects">Projects</NavLink>
             </NavItem>
             <NavItem onClick={toggle}>
               <NavLink href="#work">Work</NavLink>
             </NavItem>
-            <NavItem onClick={toggle}>
-              <NavLink href="#contact">Contact</NavLink>
-            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
-    </React.Fragment>
-  );
-}
-
-const About = () => {
-  return (
-    <React.Fragment>
-      <Card>
-        <CardImg top src="./assets/me.jpg" style={{
-          borderRadius: "50%", width: "250px",
-          maxHeight: "250px"}} alt="Profile" />
-        <CardBody>
-          <CardTitle className="d-flex justify-content-center"><h1>Niteshkumar Sukumaran</h1></CardTitle>
-          <CardText style={{fontSize:"20px"}}>
-            <ListGroupItem>
-              Age: <span className="text-primary">20</span>
-            </ListGroupItem>
-            <ListGroupItem>
-              Course:{" "}
-              <span className="text-primary">
-                &nbsp;MSc Software Systems
-              </span>
-            </ListGroupItem>
-            <ListGroupItem>
-              Country: <span className="text-primary">India</span>
-            </ListGroupItem>
-          </CardText>
-          <CardFooter className="d-flex justify-content-center">
-            <NavLink
-              href="./assets/Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button outline color="primary">
-                Resume
-                </Button>
-            </NavLink>
-          </CardFooter>
-        </CardBody>
-      </Card>
-    </React.Fragment>
-  );
-}
-
-const Contact = () => {
-  return (
-    <React.Fragment>
-      <Nav pills className="d-flex">
-        <NavItem className="d-flex p-4">
-          <NavLink href="mailto:nitesh156200@gmail.com">
-            <FontAwesomeIcon
-              icon={faEnvelopeOpen}
-              size="4x"
-              style={{ color: "#ffb800" }}
-              className="d-flex align-items-start"
-            />
-            <p style={{ color: "white" }} className="p-1">
-              Mail
-            </p>
-          </NavLink>
-        </NavItem>
-        <NavItem className="d-flex p-4">
-          <NavLink
-            href="https://t.me/Niteshkumar15"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faPaperPlane}
-              size="4x"
-              style={{ color: "#ffb800" }}
-              className="d-flex align-items-start"
-            />
-            <p style={{ color: "white", paddingTop: "10px" }}>Telegram</p>
-          </NavLink>
-        </NavItem>
-        <NavItem className="d-flex p-4">
-          <NavLink
-            href="https://github.com/niteshkumar2000"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faGithub}
-              size="4x"
-              style={{ color: "#ffb800" }}
-              className="d-flex align-items-start"
-            />
-            <p style={{ color: "white", paddingTop: "10px" }}>
-              &nbsp;&nbsp;Github
-            </p>
-          </NavLink>
-        </NavItem>
-        <NavItem className="d-flex p-4">
-          <NavLink
-            href="https://www.linkedin.com/in/niteshkumar-s-b4379a148/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              size="4x"
-              style={{ color: "#ffb800" }}
-              className="d-flex align-items-start"
-            />
-            <p style={{ color: "white", paddingTop: "10px" }}>Linkedin</p>
-          </NavLink>
-        </NavItem>
-        {/* <NavItem className="d-flex p-4">
-          <NavLink
-            href="https://wa.me/918825812533"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faWhatsapp}
-              size="4x"
-              style={{ color: "#ffb800" }}
-              className="d-flex align-items-start"
-            />
-            <p style={{ color: "white", paddingTop: "10px" }}>Whatsapp</p>
-          </NavLink>
-        </NavItem> */}
-      </Nav>
     </React.Fragment>
   );
 }
@@ -535,14 +391,31 @@ function App() {
         >
           <NavBar />
         </Row>
-        <Row className="d-flex justify-content-center pt-5 pb-5 mt-5" id="home">
-          <Home />
-        </Row>
-        <Row className="d-flex justify-content-center pt-5 mt-5" id="about">
-          <h1>About Me</h1>
-        </Row>
-        <Row className="d-flex justify-content-center">
-          <About />
+        <Row className="d-flex justify-content-center p-5 mt-4" id="home">
+           <div className="bg-gray-900 rounded-lg p-10">
+              <img className="h-40 w-40 rounded-full mx-auto" src={pfp} alt="PFP"/>
+              <div className="text-center">
+                <h2 className="text-2xl pt-2">Niteshkumar Sukumaran</h2>
+                <div className="text-white-500 text-xl">Software Developer</div>
+                <div className="grid grid-cols-3 divide-x divide-gray-400 p-2">
+                  <div className="text-center">
+                    <a href="mailto:nitesh156200@gmail.com" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faEnvelopeOpen} size="2x"/>
+                    </a>
+                  </div>
+                  <div  className="text-center">
+                    <a href="https://www.linkedin.com/in/niteshkumar-s-b4379a148/" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faLinkedin} size="2x"/>
+                    </a>
+                  </div>
+                  <div className="text-center">
+                    <a href="https://github.com/niteshkumar2000" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faGithub} size="2x"/>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
         </Row>
         <Row className="d-flex justify-content-center pt-5" id="projects">
           <h1>Projects</h1>
@@ -570,12 +443,6 @@ function App() {
         </Row>
         <Row className="d-flex justify-content-start pt-5">
           <WorkExperience />
-        </Row>
-        <Row className="d-flex justify-content-center pt-5" id="contact">
-          <h1>Contact Me</h1>
-        </Row>
-        <Row className="d-flex justify-content-center">
-          <Contact />
         </Row>
         <Row className="d-flex justify-content-end pt-5">
           <p>
