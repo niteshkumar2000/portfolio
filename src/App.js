@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
 import {
-  Nav,
-  NavItem,
   NavLink,
   Row,
   Container,
@@ -13,45 +11,11 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  Collapse,
-  Navbar,
-  NavbarToggler
 } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import pfp from "./assets/me.jpg";
 
-const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-  return (
-    <React.Fragment>
-      <Navbar fixed="top" dark color="dark" expand="md">
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem onClick={toggle}>
-              <NavLink href="#home">Home</NavLink>
-            </NavItem>
-            <NavItem onClick={toggle}>
-              <NavLink href="#projects">Projects</NavLink>
-            </NavItem>
-            <NavItem onClick={toggle}>
-              <NavLink href="#work">Work</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </React.Fragment>
-  );
-}
+import About from './components/About';
+import NavBar from './components/Navbar';
+import WorkExperience from './components/Work';
 
 const ProjectHackIn = () => {
 
@@ -330,92 +294,15 @@ const Contribution = () => {
   );
 };
 
-const WorkExperience = () => {
-  return (
-    <React.Fragment>
-      <VerticalTimeline>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2020 May - Present"
-          contentStyle={{ background: "black", color: "#fff" }}
-          contentArrowStyle={{ borderRight: "7px solid  #fff" }}
-          iconStyle={{ background: "#ffb800" }}
-        >
-          <h3 className="vertical-timeline-element-title">Student Intern</h3>
-          <h4 className="vertical-timeline-element-subtitle">KLA, Chennai</h4>
-          <p style={{color:"#ffb800"}}>
-            (i) Advanced Diagonostics & performance models using Machine Learning Algorithms. <br></br>
-            (ii) Building Microservices and deploying on Kubernetes.
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: "black", color: "#ffb800" }}
-          contentArrowStyle={{ borderRight: "7px solid  #ffb800" }}
-          date="2018 April - May"
-          iconStyle={{ background: "black" }}
-        >
-          <h3 className="vertical-timeline-element-title">Summer Intern</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            My Game Solutions, Coimbatore
-          </h4>
-          <p style={{color: "#fff"}}>
-            I was introduced to Outsystem low
-            code platform and developed an Android application, which helps in
-            task management.
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2017 June - Present"
-          contentStyle={{ background: "black", color: "#fff" }}
-          contentArrowStyle={{ borderRight: "7px solid  #fff" }}
-          iconStyle={{ background: "#ffb800" }}
-        >
-          <h3 className="vertical-timeline-element-title">College</h3>
-          <h4 className="vertical-timeline-element-subtitle">PSG Tech, Coimbatore</h4>
-          <p style={{color:"#ffb800"}}>
-            MSc.Sofware Systems (5 year intergrated course)
-          </p>
-        </VerticalTimelineElement>
-      </VerticalTimeline>
-    </React.Fragment>
-  );
-}
-
 function App() {
     return (
       <Container>
-        <Row
-          className="d-flex justify-content-start"
-        >
+        <Row className="d-flex justify-content-start">
           <NavBar />
         </Row>
-        <Row className="d-flex justify-content-center p-5 mt-4" id="home">
-           <div className="bg-gray-900 rounded-lg p-10">
-              <img className="h-40 w-40 rounded-full mx-auto" src={pfp} alt="PFP"/>
-              <div className="text-center">
-                <h2 className="text-2xl pt-2">Niteshkumar Sukumaran</h2>
-                <div className="text-white-500 text-xl">Software Developer</div>
-                <div className="grid grid-cols-3 divide-x divide-gray-400 p-2">
-                  <div className="text-center">
-                    <a href="mailto:nitesh156200@gmail.com" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faEnvelopeOpen} size="2x"/>
-                    </a>
-                  </div>
-                  <div  className="text-center">
-                    <a href="https://www.linkedin.com/in/niteshkumar-s-b4379a148/" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faLinkedin} size="2x"/>
-                    </a>
-                  </div>
-                  <div className="text-center">
-                    <a href="https://github.com/niteshkumar2000" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faGithub} size="2x"/>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <Row id="home"></Row>
+        <Row className="d-flex justify-content-center mt-5">
+          <About />
         </Row>
         <Row className="d-flex justify-content-center pt-5" id="projects">
           <h1>Projects</h1>
