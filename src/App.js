@@ -74,7 +74,7 @@ const ProjectMup = () => {
         </ModalBody>
         <ModalFooter>
           <NavLink
-            href="https://github.com/DAMCS/hack-in/"
+            href="https://github.com/Harishkumar01/Cab-Management"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -183,7 +183,7 @@ const ProjectAppCenter = () => {
         </ModalBody>
         <ModalFooter>
           <NavLink
-            href="https://github.com/niteshkumar2000/PyOTP"
+            href="https://github.com/niteshkumar2000/WPF-AppCenter"
             target="_blank"
             rel="noopener noreferrer"
           >
