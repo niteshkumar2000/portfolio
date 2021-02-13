@@ -6,6 +6,7 @@ import {
   Navbar,
   NavbarToggler,
   Collapse} from "reactstrap";
+import Resume from "../assets/Resume.pdf";
 
 export default class NavBar extends React.Component{
     constructor(props){
@@ -37,6 +38,9 @@ export default class NavBar extends React.Component{
                             </NavItem>
                             <NavItem onClick={this.toggle}>
                             <NavLink href="#work">Work</NavLink>
+                            </NavItem>
+                            <NavItem onClick={this.toggle}>
+                            <NavLink href={Resume} target="_blank" rel="noopener noreferrer">Resume</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
