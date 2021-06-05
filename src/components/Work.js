@@ -11,7 +11,22 @@ export default class Work extends React.Component{
                 <VerticalTimeline>
                     <VerticalTimelineElement
                     className="vertical-timeline-element--work"
-                    date="2020 May - Present"
+                    contentStyle={{ background: "black", color: "#ffb800" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #ffb800" }}
+                    date="2021 May - Present"
+                    iconStyle={{ background: "black" }}
+                    >
+                    <h3 className="vertical-timeline-element-title">Summer Intern</h3>
+                    <h4 className="vertical-timeline-element-subtitle">
+                        KLA, Chennai
+                    </h4>
+                    <p style={{color: "#fff"}}>
+                        Design and Implementation of centralized file server where clients can upload and retrieve files.
+                    </p>
+                    </VerticalTimelineElement>
+                    <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    date="2020 May - 2020 December"
                     contentStyle={{ background: "black", color: "#fff" }}
                     contentArrowStyle={{ borderRight: "7px solid  #fff" }}
                     iconStyle={{ background: "#ffb800" }}
