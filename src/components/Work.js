@@ -13,7 +13,7 @@ export default class Work extends React.Component{
                     className="vertical-timeline-element--work"
                     contentStyle={{ background: "black", color: "#ffb800" }}
                     contentArrowStyle={{ borderRight: "7px solid  #ffb800" }}
-                    date="2021 May - Present"
+                    date="2021 May - 2021 July"
                     iconStyle={{ background: "black" }}
                     >
                     <h3 className="vertical-timeline-element-title">Summer Intern</h3>
@@ -42,7 +42,7 @@ export default class Work extends React.Component{
                     className="vertical-timeline-element--work"
                     contentStyle={{ background: "black", color: "#ffb800" }}
                     contentArrowStyle={{ borderRight: "7px solid  #ffb800" }}
-                    date="2018 April - May"
+                    date="2018 April - 2018 May"
                     iconStyle={{ background: "black" }}
                     >
                     <h3 className="vertical-timeline-element-title">Summer Intern</h3>
