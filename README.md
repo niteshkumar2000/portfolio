@@ -1,4 +1,4 @@
-## [Portfolio](https://niteshkumar2000.github.io/portfolio)
+## [Portfolio](https://niteshkumar2000.github.io/portfolio) ![CI/CD](https://github.com/niteshkumar2000/portfolio/workflows/CI/CD/badge.svg)
 
 Source code for my portfolio, made with React.
 
