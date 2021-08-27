@@ -11,59 +11,67 @@ $primary: #ffb800;
 
 $theme-colors: (
   "primary": $primary,
-  "dark": $body-bg
+  "dark": $body-bg,
 );
 
 $spacer: 3rem;
-$spacers:();
+$spacers: ();
 
 $spacers: map-merge(
-          (
-            0: 0, 
-            1: ($spacer * .25),
-            2: ($spacer * .5),
-            3: ($spacer * .75),
-            4: ($spacer * 1),
-            5: ($spacer * 2)
-          ),
-          $spacers);
+  (
+    0: 0,
+    1: (
+      $spacer * 0.25,
+    ),
+    2: (
+      $spacer * 0.5,
+    ),
+    3: (
+      $spacer * 0.75,
+    ),
+    4: (
+      $spacer * 1,
+    ),
+    5: (
+      $spacer * 2,
+    ),
+  ),
+  $spacers
+);
 
-$hr-border-color: rgba(white, .5) ;
+$hr-border-color: rgba(white, 0.5);
 $hr-border-width: 1px;
-
 
 $list-group-color: $body-color;
 $list-group-bg: $body-bg;
 
+$modal-inner-padding: 1rem;
 
-$modal-inner-padding:               1rem ;
+$modal-dialog-margin: 0.5rem;
+$modal-dialog-margin-y-sm-up: 1.75rem;
 
-$modal-dialog-margin:               .5rem ;
-$modal-dialog-margin-y-sm-up:       1.75rem ;
+$modal-content-color: $body-color;
+$modal-content-bg: $body-bg;
+$modal-content-border-color: rgba($body-color, 0.2);
+$modal-content-box-shadow-xs: 0 0.25rem 0.5rem rgba(black, 0.5);
+$modal-content-box-shadow-sm-up: 0 0.5rem 1rem rgba(black, 0.5);
 
+$modal-backdrop-bg: lighten($body-bg, 15%);
+$modal-backdrop-opacity: 0.5;
+$modal-header-border-color: $primary;
+$modal-header-padding-y: 1rem;
+$modal-header-padding-x: 1rem; // Keep this for backwards compatibility
 
-$modal-content-color:               $body-color ;
-$modal-content-bg:                  $body-bg ;
-$modal-content-border-color:        rgba($body-color, .2) ;
-$modal-content-box-shadow-xs:       0 .25rem .5rem rgba(black, .5) ;
-$modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba(black, .5) ;
+$modal-xl: 1140px;
+$modal-lg: 800px;
+$modal-md: 500px;
+$modal-sm: 300px;
 
-$modal-backdrop-bg:                 lighten($body-bg,15%) ;
-$modal-backdrop-opacity:            .5 ;
-$modal-header-border-color:         $primary ;
-$modal-header-padding-y:            1rem ;
-$modal-header-padding-x:            1rem ; // Keep this for backwards compatibility
+$modal-fade-transform: translate(0, -50px);
+$modal-show-transform: none;
+$modal-transition: transform 0.3s ease-out;
 
-$modal-xl:                          1140px ;
-$modal-lg:                          800px ;
-$modal-md:                          500px ;
-$modal-sm:                          300px ;
-
-$modal-fade-transform:              translate(0, -50px) ;
-$modal-show-transform:              none ;
-$modal-transition:                  transform .3s ease-out ;
-
-$overflows: auto, hidden ;
+$overflows: auto, hidden;
 
 $card-bg: $body-bg;
 $card-color: $primary;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './App.css';
+import "./App.css";
 import {
   NavLink,
   Row,
@@ -13,12 +13,11 @@ import {
   ModalFooter,
 } from "reactstrap";
 
-import About from './components/About';
-import NavBar from './components/Navbar';
-import WorkExperience from './components/Work';
+import About from "./components/About";
+import NavBar from "./components/Navbar";
+import WorkExperience from "./components/Work";
 
 const ProjectHackIn = () => {
-
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
@@ -200,7 +199,6 @@ const ProjectAppCenter = () => {
   );
 };
 
-
 const GitUserBot = () => {
   const [modal, setModal] = useState(false);
 
@@ -214,7 +212,8 @@ const GitUserBot = () => {
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Github UserBot</ModalHeader>
         <ModalBody>
-          A telegram bot which gives Github user information which can be deployed on server :)
+          A telegram bot which gives Github user information which can be
+          deployed on server :)
         </ModalBody>
         <ModalFooter>
           <NavLink
@@ -233,7 +232,7 @@ const GitUserBot = () => {
       </Modal>
     </div>
   );
-}
+};
 
 const AcademicProjects = () => {
   return (
@@ -269,25 +268,31 @@ const NonAcademicProjects = () => {
       </ListGroup>
     </React.Fragment>
   );
-}
+};
 
 const Contribution = () => {
   return (
     <React.Fragment>
       <ListGroup horizontal>
-        <ListGroupItem tag='a' href="https://github.com/FreakyOS"
+        <ListGroupItem
+          tag="a"
+          href="https://github.com/FreakyOS"
           target="_blank"
-          rel="noopener noreferrer">
-            <Button outline color="primary">
-              Freaky OS
-            </Button>
+          rel="noopener noreferrer"
+        >
+          <Button outline color="primary">
+            Freaky OS
+          </Button>
         </ListGroupItem>
-        <ListGroupItem tag='a' href="https://github.com/PixelExtended"
+        <ListGroupItem
+          tag="a"
+          href="https://github.com/PixelExtended"
           target="_blank"
-          rel="noopener noreferrer">
-            <Button outline color="primary">
-              Pixel Extended
-            </Button>
+          rel="noopener noreferrer"
+        >
+          <Button outline color="primary">
+            Pixel Extended
+          </Button>
         </ListGroupItem>
       </ListGroup>
     </React.Fragment>
@@ -295,53 +300,53 @@ const Contribution = () => {
 };
 
 function App() {
-    return (
-      <Container>
-        <Row className="d-flex justify-content-start">
-          <NavBar />
-        </Row>
-        <Row id="home"></Row>
-        <Row className="d-flex justify-content-center mt-5">
-          <About />
-        </Row>
-        <Row className="d-flex justify-content-center pt-5" id="projects">
-          <h1>Projects</h1>
-        </Row>
-        <Row className="d-flex justify-content-start" id="projects">
-          <h3>Academic Projects</h3>
-        </Row>
-        <Row className="d-flex justify-content-start">
-          <AcademicProjects />
-        </Row>
-        <Row className="d-flex justify-content-start" id="projects">
-          <h3>Non-Academic Projects</h3>
-        </Row>
-        <Row className="d-flex justify-content-start">
-          <NonAcademicProjects />
-        </Row>
-        <Row className="d-flex justify-content-start" id="projects">
-          <h3>Open Source Contribution</h3>
-        </Row>
-        <Row className="d-flex justify-content-start">
-          <Contribution />
-        </Row>
-        <Row className="d-flex justify-content-center pt-5" id="work">
-          <h1>Timeline</h1>
-        </Row>
-        <Row className="d-flex justify-content-start pt-5">
-          <WorkExperience />
-        </Row>
-        <Row className="d-flex justify-content-end pt-5">
-          <p>
-            &copy; {new Date().getFullYear().toString() + " "}
-            <span className="text-primary">
-              <b>Niteshkumar</b>
-            </span>{" "}
-            All Rights Reserved
-          </p>
-        </Row>
-      </Container>
-    );
+  return (
+    <Container>
+      <Row className="d-flex justify-content-start">
+        <NavBar />
+      </Row>
+      <Row id="home"></Row>
+      <Row className="d-flex justify-content-center mt-5">
+        <About />
+      </Row>
+      <Row className="d-flex justify-content-center pt-5" id="projects">
+        <h1>Projects</h1>
+      </Row>
+      <Row className="d-flex justify-content-start" id="projects">
+        <h3>Academic Projects</h3>
+      </Row>
+      <Row className="d-flex justify-content-start">
+        <AcademicProjects />
+      </Row>
+      <Row className="d-flex justify-content-start" id="projects">
+        <h3>Non-Academic Projects</h3>
+      </Row>
+      <Row className="d-flex justify-content-start">
+        <NonAcademicProjects />
+      </Row>
+      <Row className="d-flex justify-content-start" id="projects">
+        <h3>Open Source Contribution</h3>
+      </Row>
+      <Row className="d-flex justify-content-start">
+        <Contribution />
+      </Row>
+      <Row className="d-flex justify-content-center pt-5" id="work">
+        <h1>Timeline</h1>
+      </Row>
+      <Row className="d-flex justify-content-start pt-5">
+        <WorkExperience />
+      </Row>
+      <Row className="d-flex justify-content-end pt-5">
+        <p>
+          &copy; {new Date().getFullYear().toString() + " "}
+          <span className="text-primary">
+            <b>Niteshkumar</b>
+          </span>{" "}
+          All Rights Reserved
+        </p>
+      </Row>
+    </Container>
+  );
 }
 
 export default App;
