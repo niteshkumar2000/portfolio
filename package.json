@@ -16,11 +16,12 @@
     "react-device-detect": "^1.14.0",
     "react-dom": "^16.14.0",
     "react-ga": "^2.7.0",
+    "react-responsive-carousel": "^3.2.21",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "react-vertical-timeline-component": "^3.3.0",
     "reactstrap": "^8.6.0",
-    "tailwindcss": "^1.9.3",
+    "tailwindcss": "^1.9.6",
     "vanta": "^0.5.21"
   },
   "scripts": {

@@ -38,6 +38,9 @@ export default class NavBar extends React.Component {
                 <NavLink href="#projects">Projects</NavLink>
               </NavItem>
               <NavItem onClick={this.toggle}>
+                <NavLink href="#recommendations">Recommendations</NavLink>
+              </NavItem>
+              <NavItem onClick={this.toggle}>
                 <NavLink href="#work">Work</NavLink>
               </NavItem>
               <NavItem onClick={this.toggle}>

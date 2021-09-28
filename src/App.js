@@ -1,335 +1,109 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import {
-  NavLink,
-  Row,
-  Container,
-  ListGroup,
-  ListGroupItem,
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-} from "reactstrap";
+import { Row, Container } from "reactstrap";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 import About from "./components/About";
 import NavBar from "./components/Navbar";
 import WorkExperience from "./components/Work";
-
-const ProjectHackIn = () => {
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
-
-  return (
-    <div>
-      <Button outline color="primary" onClick={toggle}>
-        Hack[in]
-      </Button>
-      <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Hack[in]</ModalHeader>
-        <ModalBody>
-          An online game for users across the world designed for an inter
-          college event. It is implemented using the MERN stack and runs on AWS.
-        </ModalBody>
-        <ModalFooter>
-          <NavLink
-            href="https://github.com/DAMCS/hack-in/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button color="primary" onClick={toggle}>
-              View
-            </Button>
-          </NavLink>{" "}
-          <Button color="danger" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </Modal>
-    </div>
-  );
-};
-
-const ProjectMup = () => {
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
-
-  return (
-    <div>
-      <Button outline color="primary" onClick={toggle}>
-        HnK Cabs
-      </Button>
-      <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>HnK Cabs</ModalHeader>
-        <ModalBody>
-          A database project developed using Bootstrap,Javascript,PHP as
-          frontend and Oracle 11g as backend. It is an online taxi booking
-          service which maps the rider’s request to the available driver and in
-          turn connects the driver to rider. At the end of each trip, drivers
-          and riders can rate each other and also give feedback.
-        </ModalBody>
-        <ModalFooter>
-          <NavLink
-            href="https://github.com/Harishkumar01/Cab-Management"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button color="primary" onClick={toggle}>
-              View
-            </Button>
-          </NavLink>{" "}
-          <Button color="danger" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </Modal>
-    </div>
-  );
-};
-
-const ProjectScrapeIt = () => {
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
-
-  return (
-    <div>
-      <Button outline color="primary" onClick={toggle}>
-        ScrapeIt
-      </Button>
-      <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>ScrapeIt</ModalHeader>
-        <ModalBody>
-          A python scrapy application. The spider searches for the products of
-          that particular brand in popular e-commerce websites and renders the
-          details of the products.
-        </ModalBody>
-        <ModalFooter>
-          <NavLink
-            href="https://github.com/niteshkumar2000/ScrapeIt"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button color="primary" onClick={toggle}>
-              View
-            </Button>
-          </NavLink>{" "}
-          <Button color="danger" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </Modal>
-    </div>
-  );
-};
-
-const ProjectPyOTP = () => {
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
-
-  return (
-    <div>
-      <Button outline color="primary" onClick={toggle}>
-        PyOTP
-      </Button>
-      <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>PyOTP</ModalHeader>
-        <ModalBody>
-          A python application which generates and sends OTP and verifies user
-          either through email or mobile. This is achieved using the SMTP and
-          MIME protocol for email and twilio API for mobile
-        </ModalBody>
-        <ModalFooter>
-          <NavLink
-            href="https://github.com/niteshkumar2000/PyOTP"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button color="primary" onClick={toggle}>
-              View
-            </Button>
-          </NavLink>{" "}
-          <Button color="danger" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </Modal>
-    </div>
-  );
-};
-
-const ProjectAppCenter = () => {
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
-
-  return (
-    <div>
-      <Button outline color="primary" onClick={toggle}>
-        AppCenter
-      </Button>
-      <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>AppCenter</ModalHeader>
-        <ModalBody>
-          A WPF application written in C#, its is a combination of several
-          applications which includes basic functionalities and additional
-          features such as playing audio and video, web search, text formatting
-          by taking voice input
-        </ModalBody>
-        <ModalFooter>
-          <NavLink
-            href="https://github.com/niteshkumar2000/WPF-AppCenter"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button color="primary" onClick={toggle}>
-              View
-            </Button>
-          </NavLink>{" "}
-          <Button color="danger" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </Modal>
-    </div>
-  );
-};
-
-const GitUserBot = () => {
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
-
-  return (
-    <div>
-      <Button outline color="primary" onClick={toggle}>
-        Github UserBot
-      </Button>
-      <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Github UserBot</ModalHeader>
-        <ModalBody>
-          A telegram bot which gives Github user information which can be
-          deployed on server :)
-        </ModalBody>
-        <ModalFooter>
-          <NavLink
-            href="https://github.com/niteshkumar2000/GithubUser"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button color="primary" onClick={toggle}>
-              View
-            </Button>
-          </NavLink>{" "}
-          <Button color="danger" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </Modal>
-    </div>
-  );
-};
-
-const AcademicProjects = () => {
-  return (
-    <React.Fragment>
-      <ListGroup horizontal>
-        <ListGroupItem>
-          <ProjectPyOTP />
-        </ListGroupItem>
-        <ListGroupItem>
-          <ProjectAppCenter />
-        </ListGroupItem>
-        <ListGroupItem>
-          <ProjectMup />
-        </ListGroupItem>
-      </ListGroup>
-    </React.Fragment>
-  );
-};
-
-const NonAcademicProjects = () => {
-  return (
-    <React.Fragment>
-      <ListGroup horizontal>
-        <ListGroupItem>
-          <ProjectHackIn />
-        </ListGroupItem>
-        <ListGroupItem>
-          <ProjectScrapeIt />
-        </ListGroupItem>
-        <ListGroupItem>
-          <GitUserBot />
-        </ListGroupItem>
-      </ListGroup>
-    </React.Fragment>
-  );
-};
-
-const Contribution = () => {
-  return (
-    <React.Fragment>
-      <ListGroup horizontal>
-        <ListGroupItem
-          tag="a"
-          href="https://github.com/FreakyOS"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button outline color="primary">
-            Freaky OS
-          </Button>
-        </ListGroupItem>
-        <ListGroupItem
-          tag="a"
-          href="https://github.com/PixelExtended"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button outline color="primary">
-            Pixel Extended
-          </Button>
-        </ListGroupItem>
-      </ListGroup>
-    </React.Fragment>
-  );
-};
+import ProjectCard from "./components/ProjectCard";
+import RecommendationCard from "./components/RecommendationCard";
 
 function App() {
+  const academicProjects = [
+    {
+      name: "StockTimes",
+      description:
+        "MERN stack application for keeping up to date with stock news and charts.",
+      language: ["react", "mongo", "node", "express"],
+    },
+    {
+      name: "Stock Predictor",
+      description:
+        "Combined usage of several statistical and machine learning models for predicting the stock prices.",
+      language: ["python", "sci-kit"],
+    },
+    {
+      name: "ENSE",
+      description:
+        "Enhanced Stock News Search Engine which gives personalised stock news when queried by the user.",
+      language: ["python", "flask", "scrapy", "elastic"],
+    },
+  ];
+  const nonAcademicProjects = [
+    {
+      name: "HackIn",
+      description:
+        "An online game for user across the globe created for a college event.",
+      language: ["react", "mongo", "node", "express"],
+      code: "https://github.com/DAMCS/hack-in",
+    },
+    {
+      name: "VMS",
+      description: "Internship management portal created for the department",
+      language: ["react", "mongo", "node", "express"],
+      code: "https://github.com/DAMCS",
+    },
+    {
+      name: "Freaky OS",
+      description: "Creator and maintainer of custom andriod operating system.",
+      language: ["android", "open-source", "git"],
+      code: "https://github.com/FreakyOS",
+    },
+  ];
   return (
     <Container>
       <Row className="d-flex justify-content-start">
         <NavBar />
       </Row>
       <Row id="home"></Row>
-      <Row className="d-flex justify-content-center mt-5">
+      <div className="flex justify-center items-center h-screen">
         <About />
-      </Row>
+      </div>
       <Row className="d-flex justify-content-center pt-5" id="projects">
-        <h1>Projects</h1>
+        <h1>Academic Projects</h1>
       </Row>
-      <Row className="d-flex justify-content-start" id="projects">
-        <h3>Academic Projects</h3>
+      <div className="flex flex-col justify-center items-center pt-2">
+        <Carousel className="md:w-1/2">
+          {academicProjects.map((project) => {
+            return (
+              <ProjectCard
+                language={project.language}
+                content={project.description}
+                name={project.name}
+                link={project.code}
+              />
+            );
+          })}
+        </Carousel>
+      </div>
+      <Row className="d-flex justify-content-center pt-2">
+        <h1>Non-Academic Projects</h1>
       </Row>
-      <Row className="d-flex justify-content-start">
-        <AcademicProjects />
+      <div className="flex flex-col justify-center items-center pt-2">
+        <Carousel className="md:w-1/2">
+          {nonAcademicProjects.map((project) => {
+            return (
+              <ProjectCard
+                language={project.language}
+                content={project.description}
+                name={project.name}
+                link={project.code}
+              />
+            );
+          })}
+        </Carousel>
+      </div>
+      <Row className="d-flex justify-content-center pt-5" id="recommendations">
+        <h1>Recommendations</h1>
       </Row>
-      <Row className="d-flex justify-content-start" id="projects">
-        <h3>Non-Academic Projects</h3>
-      </Row>
-      <Row className="d-flex justify-content-start">
-        <NonAcademicProjects />
-      </Row>
-      <Row className="d-flex justify-content-start" id="projects">
-        <h3>Open Source Contribution</h3>
-      </Row>
-      <Row className="d-flex justify-content-start">
-        <Contribution />
-      </Row>
+      <div className="pt-5">
+        <Carousel className="bg-gray-900">
+          <RecommendationCard content="I have collaborated with Nitesh in numerous projects and have known Nitesh for the last 5 years. He has always shown great dedication in understanding a problem statement and tackling it down step by step. He is a hardworking and an extremely talented individual. He has profound knowledge in Software Development and most importantly is willing to share this knowledge with the team. I would recommend Nitesh to any company that would take in a dedicated, highly enthusiastic person in their team. - Nitesh's Co-wroker" />
+          <RecommendationCard content="Nitesh is exceptional intern. His technical expertise and problem solving skills are outstanding. He thinks out of box to solve critical problems. His interaction with team and understanding the problem at hand is amazing. He is a quick learner and tech enthusiast. It was great working with him and mentoring him. - Nitesh's Mentor" />
+        </Carousel>
+      </div>
       <Row className="d-flex justify-content-center pt-5" id="work">
         <h1>Timeline</h1>
       </Row>
