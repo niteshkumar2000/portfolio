@@ -62,7 +62,7 @@ function App() {
         <About />
       </div>
       <Row className="d-flex justify-content-center pt-5" id="projects">
-        <h1>Academic Projects</h1>
+        <p className="text-4xl">Academic Projects</p>
       </Row>
       <div className="flex flex-col justify-center items-center pt-2">
         <Carousel className="w-full md:w-1/2">
@@ -79,7 +79,7 @@ function App() {
         </Carousel>
       </div>
       <Row className="d-flex justify-content-center pt-2">
-        <h1>Non-Academic Projects</h1>
+        <p className="text-4xl">Non-Academic Projects</p>
       </Row>
       <div className="flex flex-col justify-center items-center pt-2">
         <Carousel className="w-full md:w-1/2">
@@ -96,7 +96,7 @@ function App() {
         </Carousel>
       </div>
       <Row className="d-flex justify-content-center pt-5" id="recommendations">
-        <h1>Recommendations</h1>
+        <p className="text-4xl">Recommendations</p>
       </Row>
       <div className="pt-5">
         <Carousel className="bg-gray-900 w-full">
@@ -105,7 +105,7 @@ function App() {
         </Carousel>
       </div>
       <Row className="d-flex justify-content-center pt-5" id="work">
-        <h1>Timeline</h1>
+        <p className="text-4xl">Timeline</p>
       </Row>
       <Row className="d-flex justify-content-start pt-5">
         <WorkExperience />

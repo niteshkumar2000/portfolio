@@ -27,7 +27,7 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar fixed="top" dark color="dark" expand="md">
+        <Navbar fixed="top" dark color="dark" expand="md" className="pt-3">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mr-auto" navbar>
