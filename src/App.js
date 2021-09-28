@@ -65,7 +65,7 @@ function App() {
         <h1>Academic Projects</h1>
       </Row>
       <div className="flex flex-col justify-center items-center pt-2">
-        <Carousel className="md:w-1/2">
+        <Carousel className="w-full md:w-1/2">
           {academicProjects.map((project) => {
             return (
               <ProjectCard
@@ -82,7 +82,7 @@ function App() {
         <h1>Non-Academic Projects</h1>
       </Row>
       <div className="flex flex-col justify-center items-center pt-2">
-        <Carousel className="md:w-1/2">
+        <Carousel className="w-full md:w-1/2">
           {nonAcademicProjects.map((project) => {
             return (
               <ProjectCard
@@ -99,7 +99,7 @@ function App() {
         <h1>Recommendations</h1>
       </Row>
       <div className="pt-5">
-        <Carousel className="bg-gray-900">
+        <Carousel className="bg-gray-900 w-full">
           <RecommendationCard content="I have collaborated with Nitesh in numerous projects and have known Nitesh for the last 5 years. He has always shown great dedication in understanding a problem statement and tackling it down step by step. He is a hardworking and an extremely talented individual. He has profound knowledge in Software Development and most importantly is willing to share this knowledge with the team. I would recommend Nitesh to any company that would take in a dedicated, highly enthusiastic person in their team. - Nitesh's Co-wroker" />
           <RecommendationCard content="Nitesh is exceptional intern. His technical expertise and problem solving skills are outstanding. He thinks out of box to solve critical problems. His interaction with team and understanding the problem at hand is amazing. He is a quick learner and tech enthusiast. It was great working with him and mentoring him. - Nitesh's Mentor" />
         </Carousel>
