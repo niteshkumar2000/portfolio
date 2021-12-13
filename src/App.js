@@ -53,7 +53,7 @@ function App() {
     },
   ];
   return (
-    <Container>
+    <Container className="scroll-smooth">
       <Row className="d-flex justify-content-start">
         <NavBar />
       </Row>
